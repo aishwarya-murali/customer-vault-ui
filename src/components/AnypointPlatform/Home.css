@@ -1,0 +1,41 @@
+.verticalLine {
+  border-right: thin solid #fff;
+}
+
+.homePageText {
+  color: #f9fafb !important;
+}
+
+.homePageBackground {
+  background-color: #020202;
+}
+
+._9x4YY a {
+  color: #f9fafb;
+}
+
+.leftSlant, .rightSlant {
+    overflow-x: hidden;
+    position: absolute;
+    background: #020202;
+    width: 2000px;
+    height: 2000px;
+    top: 0;
+}
+.leftSlant {
+    -webkit-transform: rotate(30deg);
+    transform: rotate(30deg);
+    left: -1000px;
+}
+
+.rightSlant {
+    /* -webkit-transform: rotate(55deg); */
+    transform: rotate(55deg);
+    right: -1400px;
+}
+
+.Hero__container___3C7cR .Hero__inner___1o0W2 {
+    max-width: 800px;
+    position: relative;
+    margin: auto;
+}
