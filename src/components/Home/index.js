@@ -46,8 +46,7 @@ export default class SecurityFabricHome extends Component {
             <div className="side-menu" style={sideMenuStyle}>
               <h6 id="side-menu-title">Security Fabric</h6>
                 <List>
-                  <li className={childrenPath == undefined || childrenPath == "ingressPorts" ? "active" : "" }><Link to="/home/ingressPorts">Ingress Port</Link></li>
-                  <li className={childrenPath == "securityPolicies" ? "active" : "" }><Link to="/home/securityPolicies">Security Policies</Link></li>
+                  <li className={childrenPath == undefined || childrenPath == "securityNamespace" ? "active" : "" }><Link to="/home/securityNamespace">Security Namespace</Link></li>
                 </List>
             </div>
 
