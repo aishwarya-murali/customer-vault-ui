@@ -16,7 +16,7 @@ export default () => (
             <Route path="anypointPlatformHome" component={AnypointPlatformHome} />
             <Route path="home" component={SecurityFabricHomeContainer}>
               <IndexRoute component={SecurityNSContainer} />
-              <Route path="securityNamespace" component={SecurityNS} >
+              <Route path="security-namespace" component={SecurityNS} >
                 <IndexRoute component={SecurityNSContainer} />
                 <Route path="create" component={SecurityNSCreateContainer} />
               </Route>

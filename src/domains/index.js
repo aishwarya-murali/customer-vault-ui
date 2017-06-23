@@ -8,11 +8,18 @@ import {
   reducers  as commonReducers
 } from './common';
 
+import {
+  actions as snActions,
+  reducers as snReducers
+} from './securityNS';
+
 export const actions = {
-  commonActions: commonActions
+  commonActions: commonActions,
+  snActions: snActions
 };
 
 export const reducers = combineReducers({
-routing:            routerReducer,
-  common:             commonReducers
+  routing:            routerReducer,
+  common:             commonReducers,
+  securityNSVals:     snReducers,
 });

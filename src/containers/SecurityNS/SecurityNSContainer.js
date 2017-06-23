@@ -5,7 +5,8 @@ import { actions } from '../../domains';
 
 const securityNamespaceState = (state)  => {
   return {
-    profile: state.common.profile
+    profile: state.common.profile,
+    securityNSVals : state.securityNSVals,
   }
 }
 
@@ -13,6 +14,7 @@ function securityNamespaceActions(dispatch) {
   return {
     dispatch,
     actions: bindActionCreators({
+      fetchSecurityNS: actions.snActions.fetchSecurityNS,
   }, dispatch)
  }
 }

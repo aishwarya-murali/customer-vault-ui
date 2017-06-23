@@ -10,8 +10,13 @@ const securityNamespaceState = (state)  => {
 }
 
 function securityNamespaceActions(dispatch) {
-  return bindActionCreators({
-  }, dispatch);
+  return {
+    dispatch,
+    actions: bindActionCreators({
+    addSecurityNS: actions.snActions.addSecurityNS,
+    fetchSecurityNS: actions.snActions.fetchSecurityNS,
+    }, dispatch)
+  }
 }
 
 const SecurityNSCreateContainer =  connect(securityNamespaceState, securityNamespaceActions)(SecurityNSCreate);

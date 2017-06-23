@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import NavBar from '@mulesoft/anypoint-navbar';
 import { getActiveOrganizationId } from '../../services/authenticationService';
 import List from '@mulesoft/anypoint-components/lib/List';
-import Link from 'react-router/lib/Link';
+import Link from '@mulesoft/anypoint-components/lib/Link';
+import { browserHistory } from 'react-router';
+import Button from '@mulesoft/anypoint-components/lib/Button'
 
 const product = {
   href: "/anypointPlatformHome",
@@ -42,11 +44,12 @@ export default class SecurityFabricHome extends Component {
         onOrganizationChange={this.onOrganizationChange}
         onSignout={this.onSignout}
       />
-        <div  className="main-container">
+        <div  className="main-container" style={{paddingLeft: "10px"}}>
             <div className="side-menu" style={sideMenuStyle}>
-              <h6 id="side-menu-title">Security Fabric</h6>
+              <h6 id="side-menu-title">Secrets Vault</h6>
                 <List>
-                  <li className={childrenPath == undefined || childrenPath == "securityNamespace" ? "active" : "" }><Link to="/home/securityNamespace">Security Namespace</Link></li>
+                  <Link onClick={browserHistory.goBack}>Back</Link>
+                  <li className={childrenPath == undefined || childrenPath == "security-namespace" ? "active" : "" }><Link to="/home/security-namespace">Security Namespace</Link></li>
                 </List>
             </div>
 

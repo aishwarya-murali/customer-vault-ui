@@ -6,13 +6,16 @@ import { push } from 'react-router-redux';
 
 export default class SecurityNSList extends Component {
 
+  componentsDidMount() {
+    this.props.actions.fetchSecurityNS(this.props.profile);
+  }
   constructor(props) {
     super(props);
     this.columns = [
       {
         name: 'Name',
         key: 'name',
-        renderer: null,
+        renderer: row => <Link to={getRowLink(row)}>{row.policyData.name}</Link>,
       },
     ]
 
@@ -20,19 +23,20 @@ export default class SecurityNSList extends Component {
   }
 
   routeToSNCreatePage() {
-      var createURL = "/home/securityNamespace/create";
+      var createURL = "/home/security-namespace/create";
       this.props.dispatch(push(createURL));
   }
 
   render() {
+    //this.props.actions.fetchSecurityNS(this.props.profile);
+    console.log(this.props.securityNSVals);
+    const { securityNSVals } = this.props.securityNSVals;
     return(
       <div>
         <div className="page-title">
             <h2>Security Namespaces</h2>
-            <span style={{color: "grey"}}>Add Security Namespaces</span>
             <br />
-            <br />
-            <br />
+
             <Button kind="primary" onClick={this.routeToSNCreatePage} id="primary-button">
               <span>Add Security Namespace</span>
             </Button>
@@ -42,9 +46,12 @@ export default class SecurityNSList extends Component {
         <div style={{height: "70vh"}}>
          <FixedTable
            columns={this.columns}
+
          />
        </div>
         </div>
       );
     }
 }
+
+const getRowLink = row => `/home/security-policies/edit/${row.id}`;
