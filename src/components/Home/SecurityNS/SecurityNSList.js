@@ -6,8 +6,8 @@ import { push } from 'react-router-redux';
 
 export default class SecurityNSList extends Component {
 
-  componentsDidMount() {
-    this.props.actions.fetchSecurityNS(this.props.profile);
+  componentDidMount() {
+  this.props.actions.fetchSecurityNS(this.props.profile);
   }
   constructor(props) {
     super(props);
@@ -28,8 +28,6 @@ export default class SecurityNSList extends Component {
   }
 
   render() {
-    //this.props.actions.fetchSecurityNS(this.props.profile);
-    console.log(this.props.securityNSVals);
     const { securityNSVals } = this.props.securityNSVals;
     return(
       <div>
@@ -46,7 +44,7 @@ export default class SecurityNSList extends Component {
         <div style={{height: "70vh"}}>
          <FixedTable
            columns={this.columns}
-
+           data={securityNSVals}
          />
        </div>
         </div>

@@ -1,5 +1,5 @@
 import * as SecurityNSService from '../../services/securityNSService';
-import * as actions      from './actionTypes';
+import * as actions from './actionTypes';
 import { push } from 'react-router-redux';
 
 export function addSecurityNS(profile, securityNSVal){
@@ -19,7 +19,7 @@ export function fetchSecurityNS(profile){
   return function(dispatch) {
     return SecurityNSService.getSecurityNSList(profile)
      .then((securityNSVals) => {
-       dispatch({type: actions.FETCH_SN_FULFILLED, payload: securityNSVals})
+       dispatch({type: actions.FETCH_SN_FULFILLED, payload: securityNSVals});
      });
   }
 }

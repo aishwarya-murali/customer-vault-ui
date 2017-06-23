@@ -15,7 +15,7 @@
     "eject": "react-scripts eject"
   },
   "dependencies": {
-    "@mulesoft/anypoint-components": "^2.63.0",
+    "@mulesoft/anypoint-components": "2.67.0",
     "@mulesoft/anypoint-icons": "~4.3.4",
     "@mulesoft/anypoint-navbar": "~0.3.5",
     "@mulesoft/anypoint-styles": "~2.4.1",

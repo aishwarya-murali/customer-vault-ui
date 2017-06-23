@@ -4,7 +4,6 @@ import SecurityFabricHome from '../../components/Home';
 import { actions } from '../../domains';
 
 const homeState = (state)  => {
-  console.log("Home state",state);
   return {
     profile: state.common.profile
   }

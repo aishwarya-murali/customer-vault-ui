@@ -17,17 +17,15 @@ constructor(props) {
    this.handleSubmit = this.handleSubmit.bind(this);
 }
 
-  componentsDidMount() {
+  componentDidMount() {
     this.props.actions.fetchSecurityNS(this.props.profile);
   }
   handleSubmit(model){
     var securityNSVal = {... this.state};
     securityNSVal = convertToJson(securityNSVal);
-    console.log(securityNSVal);
     this.props.actions.addSecurityNS(this.props.profile, securityNSVal);
   }
   handleFormChange(e,key){
-   console.log(e);
      var targetKey = e.event.target;
      var targetValue = e.value[targetKey]
      this.setState({ [targetKey] : targetValue })
@@ -35,8 +33,6 @@ constructor(props) {
 
   render() {
     var data = { ... this.state};
-
-
     return (
       <div>
       <div className="page-title">
@@ -56,7 +52,7 @@ constructor(props) {
         name="name"
         label="Name"
         style={{width: "250px"}}
-
+        required
         />
         <div style={{ margin: "50px", maxWidth: "500px"}}>
           <Button type="submit" style={{ float: "right", width: "120px"}}>

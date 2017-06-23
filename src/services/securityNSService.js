@@ -28,8 +28,6 @@ export function getSecurityNSList(profile) {
     ...config.api.uri,
     pathname:`/v1/organizations/${profile.organization.id}/policies/`
   });
-
-  console.log("Inside get SN");
   return fetch(url)
   .then((checkStatus))
   .then((response) => response.json())

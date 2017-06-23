@@ -14,9 +14,9 @@ function securityNamespaceActions(dispatch) {
   return {
     dispatch,
     actions: bindActionCreators({
-      fetchSecurityNS: actions.snActions.fetchSecurityNS,
-  }, dispatch)
- }
+    fetchSecurityNS: actions.snActions.fetchSecurityNS,
+    }, dispatch)
+  }
 }
 
 const SecurityNSContainer =  connect(securityNamespaceState, securityNamespaceActions)(SecurityNSList);
